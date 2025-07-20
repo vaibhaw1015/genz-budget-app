@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💸 Gen Z Budget App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fce4ec, #e3f2fd);
+      padding-bottom: 80px;
+    }
+    .navbar {
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+    }
+    .card {
+      border: none;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    .progress-bar {
+      font-size: 0.8rem;
+      transition: width 1s ease-in-out;
+    }
+    .nav-bottom {
+      background: #fff;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    }
+    .badge-streak {
+      background: linear-gradient(to right, #ff9800, #f44336);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <nav class="navbar fixed-top shadow-sm">
+    <div class="container-fluid px-4 py-2 d-flex justify-content-between align-items-center">
+      <div>
+        <h4 class="fw-bold text-primary">💸 Hey, Sam!</h4>
+        <p class="text-muted mb-0">Level 3 • 120 XP</p>
+      </div>
+      <div class="text-end">
+        <span class="badge badge-streak rounded-pill">🔥 5-Day Streak</span><br/>
+        <i class="bi bi-person-circle fs-2 text-secondary mt-1"></i>
+          <!-- Hidden Profile Card -->
+      <div id="profile-card" class="card shadow p-3 position-absolute end-0 mt-2 d-none" style="width: 250px; z-index: 100;">
+        <h6 class="mb-1 text-primary">👋 Sam Roy</h6>
+        <p class="mb-1">💰 Saved: <strong>$400</strong></p>
+        <p class="mb-1">📈 XP: <strong>120</strong></p>
+        <p class="text-muted small mb-0">“Saving for Tokyo trip ✈️”</p>
+      </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <div class="container pt-5 mt-4">
+
+    <!-- Today’s Spending -->
+    <div class="card p-4 mb-4">
+      <h5 class="mb-3">🛍️ Today's Spending</h5>
+      <div class="progress mb-3">
+        <div class="progress-bar bg-danger" id="spending-bar" style="width: 85%;">$85 / $100</div>
+      </div>
+      <p class="text-danger text-center fw-semibold" id="spending-feedback">⚠️ You're close to today's limit!</p>
+      <ul class="list-unstyled small">
+        <li>🍕 Food — $25</li>
+        <li>🚗 Transport — $10</li>
+        <li>🎮 Subscriptions — $50</li>
+      </ul>
+    </div>
+
+    <!-- Mission Goal -->
+    <div class="card p-4 mb-4">
+      <h5 class="mb-2">🎯 Mission: Tokyo Trip</h5>
+      <p>You've saved <strong id="saved">$400</strong> out of $1000</p>
+      <div class="progress mb-2">
+        <div id="savings-bar" class="progress-bar bg-success" style="width: 40%;">40%</div>
+      </div>
+      <p id="savings-feedback" class="text-warning small mb-0">💪 Start strong! Your trip awaits.</p>
+    </div>
+
+    <!-- XP and Reward -->
+    <div class="card p-4 mb-4 text-center">
+      <p>XP: <strong>120 / 200</strong></p>
+      <div class="progress mb-2">
+        <div class="progress-bar bg-primary" style="width: 60%;">60%</div>
+      </div>
+      <button class="btn btn-outline-primary mt-2" id="claim-btn">🎁 Claim Daily Reward</button>
+      <p id="reward-msg" class="text-success fw-semibold d-none mt-2">✅ Reward Claimed! Keep saving!</p>
+    </div>
+
+    <!-- Daily Tip -->
+    <div class="alert alert-info shadow-sm text-center">
+      💡 <strong>Today's Tip:</strong> Try a no-spend day challenge and earn 10 XP!
+    </div>
+
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="navbar fixed-bottom nav-bottom">
+    <div class="container d-flex justify-content-around">
+      <a href="index.html" class="text-primary text-center">
+        <i class="bi bi-house fs-4 d-block"></i><small>Dashboard</small>
+      </a>
+      <a href="stats.html" class="text-secondary text-center">
+        <i class="bi bi-bar-chart fs-4 d-block"></i><small>Stats</small>
+      </a>
+      <a href="wallet.html" class="text-secondary text-center">
+        <i class="bi bi-wallet2 fs-4 d-block"></i><small>Wallet</small>
+      </a>
+      <a href="settings.html" class="text-secondary text-center">
+        <i class="bi bi-gear fs-4 d-block"></i><small>Settings</small>
+      </a>
+    </div>
+</nav>
+  <script src="script.js">
+  </script>
+</body>
+</html>
